@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -48,7 +49,7 @@ class Student {
     int courseID;
     String studentName;
 
-    HashMap<Integer, String> record = new HashMap<>();
+    HashMap<Integer, ArrayList<String>> record = new HashMap<>();
 
 }
 
@@ -74,8 +75,10 @@ public class Course_Enroll {
                     inp.nextLine();
                     System.out.print("Enter Your Name : ");
                     st.studentName = inp.nextLine();
-                    st.record.put(st.courseID, st.studentName);
-                    if (cr.ava[st.courseID % 10] <= 30) {
+                    ArrayList<String> students = new ArrayList<>();
+                    students.add(st.studentName);
+                    st.record.put(st.courseID, students);
+                    if (cr.ava[st.courseID % 10] < 30) {
                         cr.ava[st.courseID % 10]++;
                     }
                     if (cr.ava[st.courseID % 10] <= 0) {

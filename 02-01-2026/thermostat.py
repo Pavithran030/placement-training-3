@@ -38,6 +38,6 @@ class SmartThermostat:
         else:
             return 18   
         
-thermostat = SmartThermostat(9)  # Example for 9 AM
+thermostat = SmartThermostat(9) 
 target_temp = thermostat.get_target_temp()     
 print("Target temperature:", target_temp, "°C")
